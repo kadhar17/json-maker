@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<title>{{title}}</title>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="js/angular.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="navbart">
+		<h2 class="navtit"><span><img class="jsonimg" src="images/json.png"/> </span> {{title}}</h2>
+	</div>
+
+	<div classs="container" ng-controller="mycontroller">
+		<div align="center" class="jsonui">
+			<div>
+				<label>Lesson Id:<input id="lesid" class="les_creation" type="text" ng-model="lessonId" placeholder="Lesson id"></label>
+				<label>Lesson Name:<input id="lesname" class="les_creation" type="text" ng-model="menudata.name.lessonName" placeholder="Lesson name"></label>
+				<label>Total Dropdowns:
+					<select class="les_creation" ng-change="hasChanged()" ng-model="selecteddd" ng-init=" selecteddd =ddcount[0]"   ng-options="dd for dd in ddcount">
+					</select></label><br/>
+					<div ng-if="selecteddd>0">
+						<button ng-click="clear()">Clear</button>
+						<button ng-click="jsoncreate()"><img class="imgclass" src="images/download.png"/>JSON</button>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div>	
+				</div>
+			</div>
+
+
+			<div ng-if="selecteddd>0" class="flex-container">
+				<div class="file">
+					<div class="menu" ng-repeat="x in ddclick()" >
+						<div ng-init="menudata.dropDowns[$index+1].markers='no'" ng-class="menudata.dropDowns[$index+1].type+menudata.dropDowns[$index+1].markers">
+							<!-- {{menudata.dropDowns[$index+1].type+menudata.dropDowns[$index+1].markers}} -->
+
+							<div class="feedback">
+
+								<span ng-switch="menudata.dropDowns[$index+1].type+menudata.dropDowns[$index+1].markers">
+									<span ng-switch-when="videoyes">(Video with activity)</span>
+									<span ng-switch-when="videono">(Video)</span>
+									<span ng-switch-when="video">(Video)</span>
+									<span ng-switch-when="actno">(Activity)</span>
+									<span ng-switch-when="act">(Activity)</span>
+									<span ng-switch-default>(Video)</span>
+								</span>
+								<!-- <span ng-click="removedd($index+1)" style="float:right" class="clrbtn">Delete</span> -->
+							</div>
+
+							<div class="idname">
+								<label ng-init="menudata.dropDowns[$index+1].id=($index+1)">{{($index+1)}}.</label>
+							</div>
+
+							<div>
+								<label>title:</label>
+								<input ng-init="menudata.dropDowns[$index+1].title=''" class="names" type="text" ng-model="menudata.dropDowns[$index+1].title" placeholder="title"/> <span ng-click="menudata.dropDowns[$index+1].title=''" class="clrbtn" >clear</span>
+							</div>
+							<div>
+								<label>url:</label>
+								<input class="names" type="text" ng-change='menudata.dropDowns[$index+1].url=menudata.dropDowns[$index+1].url' ng-init="menudata.dropDowns[$index+1].url=lessonId+'_dd'+($index+1)" ng-model="menudata.dropDowns[$index+1].url" placeholder="url"/> <span ng-click="menudata.dropDowns[$index+1].url=''" class="clrbtn" >clear</span>
+							</div>
+							<div>
+								<label>images:</label>
+								<select ng-init="menudata.dropDowns[$index+1].img=images[0]" ng-model="menudata.dropDowns[$index+1].img" ng-options="ddname for ddname in images">
+								</select>
+							</div>
+
+							<div>
+								<label>path:</label>
+								<input ng-model="menudata.dropDowns[$index+1].path" type="text" placeholder="mapping"
+								><span ng-click="menudata.dropDowns[$index+1].path=''" class="clrbtn" >clear</span> 
+							</div>
+							<div>
+								<label>type:</label>
+								<select ng-init="menudata.dropDowns[$index+1].type=type[0]" ng-model="menudata.dropDowns[$index+1].type" ng-options="ddname for ddname in type"></select>
+							</div>
+
+							<div ng-if="menudata.dropDowns[$index+1].type=='video'">
+								<label>markers:</label>
+								<input ng-true-value="'yes'" ng-false-value="'no'" ng-model="menudata.dropDowns[$index+1].markers" type="checkbox"/>
+							</div>
+
+							<div ng-if="menudata.dropDowns[$index+1].type=='act'" ng-init="menudata.dropDowns[$index+1].markers='no'">
+							</div>
+
+							<div>
+								<label>audio:</label>
+								<input ng-init="menudata.dropDowns[$index+1].audio='yes'" ng-true-value="'yes'" ng-false-value="'no'" ng-model="menudata.dropDowns[$index+1].audio" type="checkbox"/>
+							</div>
+
+
+
+							<div ng-if="menudata.dropDowns[$index+1].type=='video'">
+								<label>length:</label>
+								<input type="text" ng-init="menudata.dropDowns[$index+1].length=''" ng-model="menudata.dropDowns[$index+1].length"+[$index+1] placeholder="4:03"/><span ng-click="menudata.dropDowns[$index+1].length=''" class="clrbtn" >clear</span>
+							</div>
+
+							<div ng-if="menudata.dropDowns[$index+1].type=='act' || menudata.dropDowns[$index+1].markers=='yes'">
+								<label>datacaptured:</label>
+								<input ng-init="menudata.dropDowns[$index+1].datacaptured='true'" ng-true-value="'true'" ng-false-value="'false'" ng-model="menudata.dropDowns[$index+1].datacaptured" type="checkbox"/>
+							</div>
+
+							<div ng-if="menudata.dropDowns[$index+1].type=='act' || menudata.dropDowns[$index+1].markers=='yes'">
+								<label>wide:</label>
+								<input ng-init="menudata.dropDowns[$index+1].wide='yes'" ng-true-value="'yes'" ng-false-value="'no'" ng-model="menudata.dropDowns[$index+1].wide" type="checkbox"/>
+							</div>
+
+
+
+						</div>
+					</div>
+				</div>
+				<br/><br/>
+			</div>
+		</div>
+
+
+		<div class="clearfix"></div>
+		<br/>
+
+		<div id="snackbar">Json Downloaded Successfully...</div>
+
+	</div>
+</body>
+</html>

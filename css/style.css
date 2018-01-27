@@ -1,0 +1,248 @@
+@font-face {
+	font-family: "Consolas";
+	src: url("../fonts/Consolas.ttf");
+}
+
+body {font-family: "Consolas" !important;
+margin:0;
+font-size: 14px;
+line-height: 1.0 !important;}
+
+
+.navbart {
+	overflow: hidden;
+	background-color: #0452a2;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	color: white;
+	z-index: 1000;
+}
+
+
+.navtit{
+	padding-left: 15px;
+	margin-top: 10px;
+}
+
+.jsonui{
+	margin-top: 80px;
+	font-size: 18px;
+}
+
+.clearfix{
+	clear:both;
+}
+
+label{
+	padding: 3px;
+	padding-left: 5px;
+}
+
+
+.flex-container {
+	display: flex;
+}
+
+.flex-container>div {
+	margin: 10px;
+	margin-top: 10px;
+	padding:10px;
+	font-size: 14px;
+	width:99%;
+}
+
+#lesid,.names,#lesname{
+	min-width:290px;
+	font-size: 16px;
+}
+
+select {
+	border:1px solid grey;
+	/*vertical-align:top;*/
+	height:25px;
+}
+
+input[type=checkbox] {
+	zoom: 1.7;
+	vertical-align: middle;
+}
+
+input,select {
+	padding: 1px 0px;
+	padding-top: 1px;
+	padding-right: 0px;
+	padding-bottom: 1px;
+	padding-left: 2px;
+	/*border-radius: 1px;*/
+}
+
+.menu{
+	
+}
+
+.feedback{
+	/*color: red;*/
+	font-weight: bold;
+	font-size: 15px;
+	margin-top:5px;
+	text-align: center;
+}
+
+.videoyes,.videono,.video,.act,.actno>.idname{
+	margin-top: 0px;
+}
+
+.idname{
+	color: blue;
+	font-weight: bold;
+}
+
+.menu{
+	float:left;
+}
+
+.clrbtn{
+	color:blue;
+	text-decoration: underline;
+	cursor: pointer;
+	margin-left: 3px;
+}
+
+.note{
+	color: red;
+	font-size: 13px;
+}
+
+.les_creation{
+	margin-left:10px;
+}
+
+.flex-container{
+	-moz-animation-delay: 3.5s;
+	-webkit-animation-delay: 3.5s;
+	-o-animation-delay: 3.5s;
+	animation-delay: 3.5s;
+}
+
+button{
+	background-color: #0452a2;
+	width:100px;
+	font-size: 18px!important;
+	color: white !important;
+	height: 40px;
+	border: 1px solid #0452a2;
+	border-radius: 3px !important;
+	margin: 20px !important;
+	margin-top: 10px !important;
+	margin-bottom: 0px !important;
+	cursor: pointer;
+}
+
+select,input[type=checkbox]{
+	cursor: pointer;
+	/*color:#0452a2;*/
+}
+
+.video,.act,.videono,.actno,.videoyes {
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+	max-height: 420px;
+	min-height: 340px;
+	margin: 5px;
+	min-width: 300px;
+	transition: 0.5s;
+	border:1px solid #c9d1c9;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.notransition {
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-o-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
+
+/* On mouse-over, add a deeper shadow */
+.video,.act,.videono,.actno,.videoyes:hover {
+	box-shadow: 0 6px 2px -4px rgba(0,0,0,.2), 0 4px 4px 0 rgba(0,0,0,.14), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.video,.videono>.feedback{
+	color: blue;
+}
+
+.act,.actno>.feedback{
+	color: red;
+}
+
+.videoyes>.feedback{
+	color: black;
+}
+
+#snackbar {
+	visibility: hidden;
+	min-width: 250px;
+	margin-left: -125px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	border-radius: 5px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	bottom: 30px;
+	font-size: 14px;
+}
+
+.video,.videono{
+	background-color: #c2b280;
+	color: black!important;
+}
+
+.act,.actno{
+	background-color: #b1c280;
+	color: black!important;
+}
+
+.videoyes{
+	background-color: #80c291;
+	color: black!important;
+}
+
+#snackbar.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+	from {bottom: 0; opacity: 0;} 
+	to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+	from {bottom: 0; opacity: 0;}
+	to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+	from {bottom: 30px; opacity: 1;} 
+	to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+	from {bottom: 30px; opacity: 1;}
+	to {bottom: 0; opacity: 0;}
+}
+
+.imgclass{
+	width:24px;
+}
+
+.jsonimg{
+	width: 26px;
+	margin-bottom: 3px;
+}
