@@ -7,7 +7,7 @@ app.run(function($rootScope){
 app.controller("mycontroller",function($scope){
 	$scope.title="JSON Maker";
 	$scope.ddcount=["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"];
-	$scope.selecteddd=0;
+	$scope.selecteddd=$scope.ddcount[0];
 	$scope.lessonname='';
 	$scope.wide=["yes","no"];
 	$scope.type=["video","act"];
@@ -58,12 +58,17 @@ app.controller("mycontroller",function($scope){
 		for(var i=0;i<$scope.selecteddd;i++){
 			arr[i]=$scope.ddcount[i];
 		}
+
+		$('html, body').animate({
+			'scrollTop' : $("#buttondiv").position().top
+		});
+		$(".flex-container").fadeIn();
 		//console.log(arr);
 		return arr;
 	}
 
 	$scope.clear=function(){
-		$scope.selecteddd=0;
+		$scope.selecteddd=$scope.ddcount[0];
 		$scope.lessonId="";
 		$scope.menudata={	
 			"name":{

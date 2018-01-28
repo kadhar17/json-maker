@@ -17,6 +17,7 @@ line-height: 1.0 !important;}
 	width: 100%;
 	color: white;
 	z-index: 1000;
+	user-select: none;
 }
 
 
@@ -37,11 +38,13 @@ line-height: 1.0 !important;}
 label{
 	padding: 3px;
 	padding-left: 5px;
+	user-select: none;
 }
 
 
 .flex-container {
 	display: flex;
+	margin:0 auto;
 }
 
 .flex-container>div {
@@ -52,15 +55,27 @@ label{
 	width:99%;
 }
 
-#lesid,.names,#lesname{
+.names{
+	min-width:290px;
+	font-size: 16px;
+	margin-right: -5px;
+}
+
+#lesid,#lesname{
 	min-width:290px;
 	font-size: 16px;
 }
 
+
 select {
-	border:1px solid grey;
-	/*vertical-align:top;*/
+	border-radius: 0px;
+    border-color: rgb(169, 169, 169);
 	height:25px;
+}
+
+select:disabled,select[disabled] > option,span:disabled {
+	color: grey;
+	cursor: default;
 }
 
 input[type=checkbox] {
@@ -75,10 +90,6 @@ input,select {
 	padding-bottom: 1px;
 	padding-left: 2px;
 	/*border-radius: 1px;*/
-}
-
-.menu{
-	
 }
 
 .feedback{
@@ -107,6 +118,23 @@ input,select {
 	text-decoration: underline;
 	cursor: pointer;
 	margin-left: 3px;
+	font-size: 13px;
+}
+
+.lclrbtn{
+	color:blue;
+	text-decoration: underline;
+	cursor: pointer;
+	margin-left: 4px;
+	font-size: 13px;
+}
+
+.lclrbtn1{
+	color:blue;
+	text-decoration: underline;
+	cursor: pointer;
+	margin-left: -6px;
+	font-size: 13px;
 }
 
 .note{
@@ -147,22 +175,22 @@ select,input[type=checkbox]{
 .video,.act,.videono,.actno,.videoyes {
 	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 	max-height: 420px;
-	min-height: 340px;
-	margin: 5px;
+	min-height: 285px;
+	margin: 4px;
 	min-width: 300px;
-	transition: 0.5s;
+	/*transition: 0.5s;*/
 	border:1px solid #c9d1c9;
 	border-radius: 5px;
 	padding: 5px;
 }
 
-.notransition {
+/*.notransition {
 	-webkit-transition: none !important;
 	-moz-transition: none !important;
 	-o-transition: none !important;
 	-ms-transition: none !important;
 	transition: none !important;
-}
+}*/
 
 /* On mouse-over, add a deeper shadow */
 .video,.act,.videono,.actno,.videoyes:hover {
@@ -245,4 +273,8 @@ select,input[type=checkbox]{
 .jsonimg{
 	width: 26px;
 	margin-bottom: 3px;
+}
+
+.path{
+	color:#cc3300;
 }
