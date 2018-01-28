@@ -20,6 +20,9 @@ line-height: 1.0 !important;}
 	user-select: none;
 }
 
+.markers{
+	color: green;
+}
 
 .navtit{
 	padding-left: 15px;

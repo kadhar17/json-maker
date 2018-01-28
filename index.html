@@ -89,7 +89,7 @@
 							<input type="text" ng-init="menudata.dropDowns[$index+1].length=''" ng-model="menudata.dropDowns[$index+1].length"+[$index+1] placeholder="length (e.x) 4:03"/><span ng-click="menudata.dropDowns[$index+1].length=''" class="clrbtn" >clear</span>
 						</div>
 
-						<div ng-if="menudata.dropDowns[$index+1].type=='video'">
+						<div class="markers" ng-if="menudata.dropDowns[$index+1].type=='video'">
 							<label>markers:</label>
 							<input ng-true-value="'yes'" ng-false-value="'no'" ng-model="menudata.dropDowns[$index+1].markers" type="checkbox"/>
 						</div>
