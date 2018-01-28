@@ -44,6 +44,9 @@ label{
 	user-select: none;
 }
 
+input[type=checkbox]{
+	user-select: none;
+}
 
 .flex-container {
 	display: flex;
@@ -122,6 +125,7 @@ input,select {
 	cursor: pointer;
 	margin-left: 3px;
 	font-size: 13px;
+	user-select: none;
 }
 
 .lclrbtn{
@@ -130,6 +134,7 @@ input,select {
 	cursor: pointer;
 	margin-left: 4px;
 	font-size: 13px;
+	user-select: none;
 }
 
 .lclrbtn1{
@@ -138,6 +143,7 @@ input,select {
 	cursor: pointer;
 	margin-left: -6px;
 	font-size: 13px;
+	user-select: none;
 }
 
 .note{
