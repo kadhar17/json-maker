@@ -13,7 +13,7 @@ app.controller("mycontroller",function($scope){
 	$scope.type=["video","act"];
 	$scope.markers=["no","yes"];
 	$scope.audio=["yes","no"];
-	$scope.datacaptured=["true","false"];
+	$scope.dataCaptured=["true","false"];
 	$scope.images=["examples","activity","introduction","info"];
 	$scope.lessonId="";
 
@@ -88,7 +88,7 @@ app.controller("mycontroller",function($scope){
 			//console.log(sg[i])
 			if(sg[i].type=="video" && sg[i].markers=="no"){
 				delete sg[i].markers;
-				delete sg[i].datacaptured;
+				delete sg[i].dataCaptured;
 			}
 			if(sg[i].type=="act" && sg[i].markers=="no"){
 				delete sg[i].markers;
