@@ -19,7 +19,7 @@
 
 		<div align="center" class="jsonui">
 			<div class="lessonpart">
-				<label>Lesson Id:<input id="lesid" class="les_creation" type="text" ng-model="lessonId" placeholder="Lesson id"><span ng-click="lessonId=''" class="lclrbtn">clear</span>
+				<label>Lesson Id:<input id="lesid" class="les_creation" type="text" ng-model="lessonId"  placeholder="Lesson id"><span ng-click="lessonId=''" class="lclrbtn">clear</span>
 				</label>
 
 				<label>Lesson Name:<input id="lesname" class="les_creation" type="text" ng-model="menudata.name.lessonName"  placeholder="Lesson name">
@@ -75,7 +75,7 @@
 						</div>
 						<div>
 							<label>images:</label>
-							<select ng-init="menudata.dropDowns[$index+1].img=images[0]" ng-model="menudata.dropDowns[$index+1].img" ng-options="ddname for ddname in images">
+							<select ng-init="images=[lessonId+'_dd'+($index+1),'examples','activity','introduction','info']" ng-init="menudata.dropDowns[$index+1].img=images[0]" ng-model="menudata.dropDowns[$index+1].img"  ng-options="ddname for ddname in images">
 							</select>
 						</div>
 
@@ -98,7 +98,7 @@
 						</span>
 
 						<span ng-if="menudata.dropDowns[$index+1].type=='act' || menudata.dropDowns[$index+1].markers=='yes'">
-							<label>datacaptured:</label>
+							<label>dataCaptured:</label>
 							<input ng-init="menudata.dropDowns[$index+1].dataCaptured='true'" ng-true-value="'true'" ng-false-value="'false'" ng-model="menudata.dropDowns[$index+1].dataCaptured" type="checkbox"/>
 						</span>
 
@@ -118,7 +118,7 @@
 							><span ng-click="menudata.dropDowns[$index+1].path=''" class="clrbtn" >clear</span> 
 						</div>
 
-
+						<div ng-init="menudata.dropDowns[$index+1].img=images[0]"></div>
 
 					</div>
 				</div>

@@ -59,10 +59,10 @@ app.controller("mycontroller",function($scope){
 			arr[i]=$scope.ddcount[i];
 		}
 
-		$('html, body').animate({
-			'scrollTop' : $("#buttondiv").position().top
-		});
-		$(".flex-container").fadeIn();
+		// $('html, body').animate({
+		// 	'scrollTop' : $("#buttondiv").position().top
+		// });
+		$(".flex-container").fadeIn(2000);
 		//console.log(arr);
 		return arr;
 	}
